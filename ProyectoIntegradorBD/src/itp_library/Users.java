@@ -194,33 +194,33 @@ public class Users extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido P.", "Apellido M.", "Domicilio", "Teléfono"
+                "Codigo Usuario", "Nombre", "Correo", "Pedidos"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -323,18 +323,23 @@ public class Users extends javax.swing.JPanel {
             }
             else{
                 Statement stm = reg.createStatement();
-                ResultSet counter = stm.executeQuery("SELECT * FROM USUARIO");
+                ResultSet counter = stm.executeQuery("select distinct  usuario.* , (select count(*) "
+                        + "from pedido p2 where p2.ucod = usuario.ucod) cuenta "
+                        + "from usuario, pedido "
+                        + "where usuario.ucod = pedido.ucod "
+                        + "order by 1");
 
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][3];
+                String list[][] = new String[count][4];
                 int i = 0;
                 ResultSet re = stm.executeQuery("SELECT * FROM USUARIO");
                 while(re.next()){
                     list[i][0] = re.getString("UCOD");
                     list[i][1] = re.getString("NOMBRE");
                     list[i][2] = re.getString("CORREO");
+                    list[i][3] = re.getString("cuenta");
                     i++;
                 }
                 int id = Integer.parseInt(list[idcell][0]);
