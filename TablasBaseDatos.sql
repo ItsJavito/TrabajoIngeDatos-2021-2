@@ -325,6 +325,7 @@ CREATE TABLE VENDEDOR
     PRIMARY KEY(VCOD)
 );
 
+
 insert into vendedor values(
 2000,
 'ALIAGA  ZEGARRA, ORESTES');
@@ -425,14 +426,13 @@ insert into vendedor values(
 2024,
 'VALLADOLID  CARDENAS, VALERIO');
 
-
 CREATE TABLE PEDIDO
 (
   PCOD NUMBER(10),
-  DIRECCION VARCHAR2(100),
-  FECHA_P DATE,
+  DIRECCION VARCHAR2(200),
+  FECHA_P TIMESTAMP ,
   METODO VARCHAR2(20),
-  MONTO NUMBER(10),
+  MONTO NUMBER(20),
   UCOD NUMBER(10),
   VCOD NUMBER(10),
   PRIMARY KEY (PCOD),
@@ -440,10 +440,11 @@ CREATE TABLE PEDIDO
   FOREIGN KEY (VCOD) REFERENCES VENDEDOR(VCOD)
 );
 
+
 insert into pedido values(
 3000,
 'Malecon Monte Bello 5 La Molina, La Planicie, Lima, Lima',
-'2021-04-26 00:00:00',
+'26/04/2021',
 'Web',
 43.199999999999996,
 1028,
@@ -1349,15 +1350,15 @@ CREATE TABLE MARCA
   PRIMARY KEY (MNAME)
 );
 
-
-
-INSERT INTO MARCA VALUES('WINTERS' , 'https://winters.com/' );
-INSERT INTO MARCA VALUES('PICARAS' , NULL);
-INSERT INTO MARCA VALUES('NOEL' , 'https://noel.com.co/');
-INSERT INTO MARCA VALUES('KRYZPO' , NULL);
-INSERT INTO MARCA VALUES('OLÉ OLÉ' , NULL);
-INSERT INTO MARCA VALUES('MONTERREY' , NULL);
-INSERT INTO MARCA VALUES('CHOCOLISTO' , 'https://www.chocolisto.com/');
+INSERT INTO MARCA VALUES('Winters' , 'https://winters.com/' );
+INSERT INTO MARCA VALUES('Picaras' , NULL);
+INSERT INTO MARCA VALUES('Noel' , 'https://noel.com.co/');
+INSERT INTO MARCA VALUES('Kryzpo' , NULL);
+INSERT INTO MARCA VALUES('Olé Olé' , NULL);
+INSERT INTO MARCA VALUES('Monterrey' , NULL);
+INSERT INTO MARCA VALUES('Chocolisto' , 'https://www.chocolisto.com/');
+INSERT INTO MARCA VALUES('Montblanc' , NULL);
+INSERT INTO MARCA VALUES('Zuko' , NULL);
 COMMIT;
 
 CREATE TABLE CATEGORIA
@@ -1383,103 +1384,99 @@ CREATE TABLE SUBCAT
 );
 
 
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Chocolate');
 
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Bombones');
 
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Marshmallow');
 
-insert into categoria values(
-'GOLOSINAS',
-'Grageas');
-
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Chocopunch');
 
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Chocopaleton');
 
-insert into categoria values(
+insert into SUBCAT values(
 'GOLOSINAS',
 'Toffee');
 
-insert into categoria values(
+insert into SUBCAT values(
 'BEBIDAS',
 'Cocoa');
 
-insert into categoria values(
+insert into SUBCAT values(
 'BEBIDAS',
 'Refresco en polvo');
 
-insert into categoria values(
+insert into SUBCAT values(
 'BEBIDAS',
 'Chocolate en polvo');
 
-insert into categoria values(
+insert into SUBCAT values(
 'BEBIDAS',
 'Café');
 
-insert into categoria values(
+insert into SUBCAT values(
 'BEBIDAS',
 'Capuccino');
 
-insert into categoria values(
+insert into SUBCAT values(
 'PANETONES',
 'Estandar');
 
-insert into categoria values(
+insert into SUBCAT values(
 'PANETONES',
 'Chocochispas');
 
-insert into categoria values(
+insert into SUBCAT values(
 'GALLETAS',
 'Dulce');
 
-insert into categoria values(
+insert into SUBCAT values(
 'SNACKS',
 'Maní');
 
-insert into categoria values(
+insert into SUBCAT values(
 'SNACKS',
 'Maní confitado');
 
-insert into categoria values(
+insert into SUBCAT values(
 'SNACKS',
 'Patatas fritas');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Cocoa');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Cobertura');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Chispas');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Batons');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Crema avellana');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Discos de chocolate');
 
-insert into categoria values(
+insert into SUBCAT values(
 'REPOSTERÍA',
 'Grageas');
 
@@ -1487,10 +1484,10 @@ insert into categoria values(
 
 CREATE TABLE PRODUCTO
 (
-  PRECIO NUMBER(10),
+  PRECIO NUMBER(10,2),
   SKU NUMBER(10),
   NOMBRE VARCHAR2(50),
-  PESO NUMBER(20),
+  PESO NUMBER(3,2),
   MNAME VARCHAR2(50),
   SUBC VARCHAR2(50),
   PRIMARY KEY (SKU),
@@ -1893,16 +1890,12 @@ insert into producto values(
 CREATE TABLE DETALLE 
 (
   MONTO NUMBER(10),
-  DETID NUMBER(10),
-  CANT NUMBER(10),
+  VENTA_U NUMBER(10),
   PCOD NUMBER(10),
   SKU NUMBER(10),
-  PRIMARY KEY (DETID),
-  FOREIGN KEY (PCOD) REFERENCES PEDIDO(PCOD),
-  FOREIGN KEY (SKU) REFERENCES PRODUCTO(SKU)
+  VENTA_K NUMBER(10),
+  PRIMARY KEY (PCOD,SKU)
 );
-
-
 insert into detalle values(
 28.799999999999997,
 3,
@@ -2885,7 +2878,6 @@ insert into detalle values(
 
 
 
-
 CREATE TABLE ALMACEN
 (
     ANAME VARCHAR2(50),
@@ -2914,9 +2906,11 @@ CREATE TABLE STOCK
     ANAME VARCHAR2(50),
     SKU NUMBER(10),
     STOCK NUMBER(10),
+    PRIMARY KEY (ANAME, SKU),
     FOREIGN KEY (ANAME) REFERENCES ALMACEN,
     FOREIGN KEY (SKU) REFERENCES PRODUCTO
 );
+
 
 insert into stock values(
 'Almacen San Borja',
