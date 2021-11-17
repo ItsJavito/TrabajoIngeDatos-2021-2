@@ -325,7 +325,6 @@ CREATE TABLE VENDEDOR
     PRIMARY KEY(VCOD)
 );
 
-
 insert into vendedor values(
 2000,
 'ALIAGA  ZEGARRA, ORESTES');
@@ -426,13 +425,14 @@ insert into vendedor values(
 2024,
 'VALLADOLID  CARDENAS, VALERIO');
 
+
 CREATE TABLE PEDIDO
 (
   PCOD NUMBER(10),
-  DIRECCION VARCHAR2(200),
-  FECHA_P TIMESTAMP ,
+  DIRECCION VARCHAR2(100),
+  FECHA_P DATE,
   METODO VARCHAR2(20),
-  MONTO NUMBER(20),
+  MONTO NUMBER(10),
   UCOD NUMBER(10),
   VCOD NUMBER(10),
   PRIMARY KEY (PCOD),
@@ -453,7 +453,7 @@ insert into pedido values(
 insert into pedido values(
 3001,
 'Mz. O2 Lt. 03 Urb. San Antonio De Carapongo 2 Lurigancho, San Antonio De Carapongo, Lima, Lima',
-'2021-04-26 00:00:00',
+'26/04/2021',
 'Web',
 216,
 1009,
@@ -462,7 +462,7 @@ insert into pedido values(
 insert into pedido values(
 3002,
 'Mariano De Rivera Y Ustariz #215 Surco, Huertos De San Antonio, Lima, Lima',
-'2021-04-26 00:00:00',
+'26/04/2021',
 'Web',
 35.7,
 1017,
@@ -471,7 +471,7 @@ insert into pedido values(
 insert into pedido values(
 3003,
 'Jr. Enrique Oliveros 234 San Borja, Javier Prado, Lima, Lima',
-'2021-04-26 00:00:00',
+'26/04/2021',
 'Web',
 200.7,
 1003,
@@ -480,7 +480,7 @@ insert into pedido values(
 insert into pedido values(
 3004,
 'Jr. Sinchi Roca # 2265 Lince, Risso, Lima, Lima',
-'2021-04-26 00:00:00',
+'26/04/2021',
 'Web',
 53.400000000000006,
 1009,
@@ -489,7 +489,7 @@ insert into pedido values(
 insert into pedido values(
 3005,
 'Av. Jatosisa Maz. K Lote 6 Pachacamac, Pachacamac, Lima, Lima',
-'2021-04-27 00:00:00',
+'27/04/2021',
 'Web',
 174.79999999999998,
 1046,
@@ -498,7 +498,7 @@ insert into pedido values(
 insert into pedido values(
 3006,
 'Jr. Punta Lobos 216 - 218 Nueva Castilla Surco, Nueva Castilla, Lima, Lima',
-'2021-04-27 00:00:00',
+'27/04/2021',
 'Web',
 45.6,
 1026,
@@ -507,7 +507,7 @@ insert into pedido values(
 insert into pedido values(
 3007,
 'Calle Naplo 270 La Molina, El Sol De La Molina, Lima, Lima',
-'2021-04-27 00:00:00',
+'27/04/2021',
 'Web',
 86.39999999999999,
 1039,
@@ -516,7 +516,7 @@ insert into pedido values(
 insert into pedido values(
 3008,
 'Avenida General Garzon 1927 Dpto. C Jesus Maria, Oyague, Lima, Lima',
-'2021-04-27 00:00:00',
+'27/04/2021',
 'Web',
 153.29999999999998,
 1005,
@@ -525,7 +525,7 @@ insert into pedido values(
 insert into pedido values(
 3009,
 'Residencial Surco, Los Rosales, Lima, Lima',
-'2021-04-28 00:00:00',
+'28/04/2021',
 'Web',
 185.5,
 1037,
@@ -534,7 +534,7 @@ insert into pedido values(
 insert into pedido values(
 3010,
 'Esquina Camelias Con Bucare, Camacho La Molina, Camacho, Lima, Lima',
-'2021-04-28 00:00:00',
+'28/04/2021',
 'Web',
 38.4,
 1021,
@@ -543,7 +543,7 @@ insert into pedido values(
 insert into pedido values(
 3011,
 'Calle Manuel Garcia 209 S.j. Miraflores, Lima, Lima',
-'2021-04-28 00:00:00',
+'28/04/2021',
 'Web',
 375.5,
 1012,
@@ -552,7 +552,7 @@ insert into pedido values(
 insert into pedido values(
 3012,
 'Urb. La Gardenias Surco, Lima, Lima',
-'2021-04-29 00:00:00',
+'29/04/2021',
 'Web',
 6,
 1020,
@@ -561,7 +561,7 @@ insert into pedido values(
 insert into pedido values(
 3013,
 'Las Tres Marias 320 Surco, Los Granados, Lima, Lima',
-'2021-04-29 00:00:00',
+'29/04/2021',
 'Web',
 28,
 1033,
@@ -570,7 +570,7 @@ insert into pedido values(
 insert into pedido values(
 3014,
 'Leo Baumann 187 San Borja, Lima, Lima',
-'2021-04-29 00:00:00',
+'29/04/2021',
 'Web',
 76.8,
 1018,
@@ -579,7 +579,7 @@ insert into pedido values(
 insert into pedido values(
 3015,
 'Cerca Las Casuarinas Y Alonso De Molna Surco, Huertos De San Antonio, Lima, Lima',
-'2021-04-29 00:00:00',
+'29/04/2021',
 'Web',
 28,
 1013,
@@ -588,7 +588,7 @@ insert into pedido values(
 insert into pedido values(
 3016,
 'Av. Proceres De Campoy, Mz D. S.j. Lurigancho, Campoy, Lima, Lima',
-'2021-04-29 00:00:00',
+'29/04/2021',
 'Web',
 262.79999999999995,
 1034,
@@ -597,7 +597,7 @@ insert into pedido values(
 insert into pedido values(
 3017,
 'Calle Tuman 219 Surco, Monterrico, Lima, Lima',
-'2021-04-30 00:00:00',
+'30/04/2021',
 'Web',
 28.799999999999997,
 1032,
@@ -606,7 +606,7 @@ insert into pedido values(
 insert into pedido values(
 3018,
 'Av.el Parque Con Calle El Portal La Molina, La Planicie, Lima, Lima',
-'2021-04-30 00:00:00',
+'30/04/2021',
 'Web',
 172.8,
 1014,
@@ -615,7 +615,7 @@ insert into pedido values(
 insert into pedido values(
 3019,
 'Calle Teruel 292 Miraflores, El Rosal, Lima, Lima',
-'2021-04-30 00:00:00',
+'30/04/2021',
 'Web',
 67.2,
 1028,
@@ -624,7 +624,7 @@ insert into pedido values(
 insert into pedido values(
 3020,
 'Calle La Pradera 105 La Molina, La Planicie, Lima, Lima',
-'2021-04-30 00:00:00',
+'30/04/2021',
 'Web',
 44.7,
 1039,
@@ -633,7 +633,7 @@ insert into pedido values(
 insert into pedido values(
 3021,
 'Calle Montelimar, Departamento Tipo Casa Totalmente Independiente Y Nueva. Surco, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 167.8,
 1012,
@@ -642,7 +642,7 @@ insert into pedido values(
 insert into pedido values(
 3022,
 'Ave. Circunvalacion Lurigancho, La Capitana, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 1,
 1009,
@@ -651,7 +651,7 @@ insert into pedido values(
 insert into pedido values(
 3023,
 'Av Carlos Izaguirre S.m Porres, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 124.8,
 1036,
@@ -660,7 +660,7 @@ insert into pedido values(
 insert into pedido values(
 3024,
 'Calle San Luis Mz. B Lte. 14 S.m Porres, Jose Carlos Mariategui, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 425,
 1021,
@@ -669,7 +669,7 @@ insert into pedido values(
 insert into pedido values(
 3025,
 'Paradero 5 De Canto Grande S.j. Lurigancho, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 173,
 1029,
@@ -678,7 +678,7 @@ insert into pedido values(
 insert into pedido values(
 3026,
 'Urb. Peru Jr. Moquegua S.m Porres, Peru, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 4.8,
 1011,
@@ -687,7 +687,7 @@ insert into pedido values(
 insert into pedido values(
 3027,
 'Monte De Los Olivos Surco, Benavides, Lima, Lima',
-'2021-05-01 00:00:00',
+'01/05/2021',
 'Web',
 86.39999999999999,
 1033,
@@ -696,7 +696,7 @@ insert into pedido values(
 insert into pedido values(
 3028,
 'Jiron Julio Bellido S.j. Miraflores, Lima, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 67.2,
 1047,
@@ -705,7 +705,7 @@ insert into pedido values(
 insert into pedido values(
 3029,
 'Mz O12 Lt33 Urb Los Cedros Chorrillos, Los Cedros De Villa, Lima, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 262.29999999999995,
 1039,
@@ -714,7 +714,7 @@ insert into pedido values(
 insert into pedido values(
 3030,
 'Panamericana Sur Km. 86 Mala, Totoritas, Cañete, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 66,
 1015,
@@ -723,7 +723,7 @@ insert into pedido values(
 insert into pedido values(
 3031,
 'Calle La Pradera 105 La Molina, La Planicie, Lima, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 216,
 1022,
@@ -732,7 +732,7 @@ insert into pedido values(
 insert into pedido values(
 3032,
 'Calle Teruel 292 Miraflores, El Rosal, Lima, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 33.6,
 1040,
@@ -741,7 +741,7 @@ insert into pedido values(
 insert into pedido values(
 3033,
 'Calle Tuman 219 Surco, Monterrico, Lima, Lima',
-'2021-05-02 00:00:00',
+'02/05/2021',
 'Web',
 86.39999999999999,
 1024,
@@ -750,7 +750,7 @@ insert into pedido values(
 insert into pedido values(
 3034,
 'Huachipa, Norte Calle 4 Manzana H, Lote 8 Lurigancho, Huachipa Norte, Lima, Lima',
-'2021-05-03 00:00:00',
+'03/05/2021',
 'Web',
 12.899999999999999,
 1035,
@@ -759,7 +759,7 @@ insert into pedido values(
 insert into pedido values(
 3035,
 'Leo Baumann 187 San Borja, Lima, Lima',
-'2021-05-03 00:00:00',
+'03/05/2021',
 'Web',
 52.8,
 1044,
@@ -768,7 +768,7 @@ insert into pedido values(
 insert into pedido values(
 3036,
 'Las Tres Marias 320 Surco, Los Granados, Lima, Lima',
-'2021-05-03 00:00:00',
+'03/05/2021',
 'Web',
 144,
 1026,
@@ -777,7 +777,7 @@ insert into pedido values(
 insert into pedido values(
 3037,
 'Playa Lomas Del Mar, Km 120 Cerro Azul, Lomas De Mar, Cañete, Lima',
-'2021-05-03 00:00:00',
+'03/05/2021',
 'Web',
 216.4,
 1013,
@@ -786,7 +786,7 @@ insert into pedido values(
 insert into pedido values(
 3038,
 'Calle Requena 200 Surco, Lima, Lima',
-'2021-05-03 00:00:00',
+'03/05/2021',
 'Web',
 180,
 1004,
@@ -795,7 +795,7 @@ insert into pedido values(
 insert into pedido values(
 3039,
 'Lloque Yupanqui 1155 Jesus Maria, Lima, Lima',
-'2021-05-04 00:00:00',
+'04/05/2021',
 'Web',
 144,
 1035,
@@ -804,7 +804,7 @@ insert into pedido values(
 insert into pedido values(
 3040,
 'Av. La Mar 1712 Pueblo Libre, Lima, Lima',
-'2021-05-04 00:00:00',
+'04/05/2021',
 'Web',
 19.2,
 1027,
@@ -813,7 +813,7 @@ insert into pedido values(
 insert into pedido values(
 3041,
 'Calle Pajaten 050, Condominio El Nuevo Rancho Miraflores, Lima, Lima',
-'2021-05-04 00:00:00',
+'04/05/2021',
 'Web',
 29,
 1043,
@@ -822,7 +822,7 @@ insert into pedido values(
 insert into pedido values(
 3042,
 'Jr San Martin 220 Vitarte Ate, Vitarte Central, Lima, Lima',
-'2021-05-04 00:00:00',
+'04/05/2021',
 'Web',
 216,
 1015,
@@ -831,7 +831,7 @@ insert into pedido values(
 insert into pedido values(
 3043,
 'Calle Teruel 163 Miraflores, Lima, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 19.5,
 1025,
@@ -840,7 +840,7 @@ insert into pedido values(
 insert into pedido values(
 3044,
 'Pasaje Punta Huaca 197 San Miguel, Lima, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 57.599999999999994,
 1046,
@@ -849,7 +849,7 @@ insert into pedido values(
 insert into pedido values(
 3045,
 'Jr. Franklin Roosevelt Cdra 8 Surco, Lima, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 42.6,
 1019,
@@ -858,7 +858,7 @@ insert into pedido values(
 insert into pedido values(
 3046,
 'Calle Enrique Del Horme 118 Miraflores, San Antonio, Lima, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 7.9,
 1012,
@@ -867,7 +867,7 @@ insert into pedido values(
 insert into pedido values(
 3047,
 'Panamericana Sur Km 94.5 Club Playa Las Arenas Casa B_22 Asia, Las Arenas, Cañete, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 42,
 1007,
@@ -876,7 +876,7 @@ insert into pedido values(
 insert into pedido values(
 3048,
 'Jr Cayalti 182 Surco, Lima, Lima',
-'2021-05-05 00:00:00',
+'05/05/2021',
 'Web',
 84,
 1034,
@@ -885,7 +885,7 @@ insert into pedido values(
 insert into pedido values(
 3049,
 'Micaela Bastidas 242 Santa Patricia La Molina, Santa Patricia, Lima, Lima',
-'2021-05-07 00:00:00',
+'07/05/2021',
 'Web',
 76.8,
 1009,
@@ -894,7 +894,7 @@ insert into pedido values(
 insert into pedido values(
 3050,
 'Augusto B Leguia 379 Entre La Cdra 13 Av Peru Y Cdra 9 De Av Zarumilla S.m Porres, Lima, Lima',
-'2021-05-07 00:00:00',
+'07/05/2021',
 'Web',
 45,
 1016,
@@ -903,7 +903,7 @@ insert into pedido values(
 insert into pedido values(
 3051,
 'Rinconada Del Lago-cv.290319 La Molina, Rinconada Del Lago, Lima, Lima',
-'2021-05-08 00:00:00',
+'08/05/2021',
 'Web',
 112.7,
 1006,
@@ -912,7 +912,7 @@ insert into pedido values(
 insert into pedido values(
 3052,
 'Av. Insurgentes La Perla 111, Callao, Callao',
-'2021-05-08 00:00:00',
+'08/05/2021',
 'Web',
 33.8,
 1023,
@@ -921,7 +921,7 @@ insert into pedido values(
 insert into pedido values(
 3053,
 'Av. Jaime Herrera 217 Cuadra 2 Pueblo Libre, Colmenares, Lima, Lima',
-'2021-05-08 00:00:00',
+'08/05/2021',
 'Web',
 104.3,
 1027,
@@ -930,7 +930,7 @@ insert into pedido values(
 insert into pedido values(
 3054,
 'Jr. Nevado Alpamayo La Molina, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 67.2,
 1000,
@@ -939,7 +939,7 @@ insert into pedido values(
 insert into pedido values(
 3055,
 'Calle. Amazonas 300 La Molina, Santa Patricia, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 67.2,
 1006,
@@ -948,7 +948,7 @@ insert into pedido values(
 insert into pedido values(
 3056,
 'Calle. La Ramada 190 La Molina, La Planicie, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 134.4,
 1019,
@@ -957,7 +957,7 @@ insert into pedido values(
 insert into pedido values(
 3057,
 'Calle Industriales 1000 La Molina, Los Ingenieros, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 394.8,
 1010,
@@ -966,7 +966,7 @@ insert into pedido values(
 insert into pedido values(
 3058,
 'Jr. La Cordillera 500 La Molina, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 24,
 1031,
@@ -975,7 +975,7 @@ insert into pedido values(
 insert into pedido values(
 3059,
 'Jr. Ricardo Tizon Y Bueno 144 Jesus Maria, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 115.19999999999999,
 1002,
@@ -984,7 +984,7 @@ insert into pedido values(
 insert into pedido values(
 3060,
 'Calle. Las Flores Surco, Lima, Lima',
-'2021-05-09 00:00:00',
+'09/05/2021',
 'Web',
 341,
 1021,
@@ -993,7 +993,7 @@ insert into pedido values(
 insert into pedido values(
 3061,
 'Calle. Los Diamantes 100 La Molina, La Capilla, Lima, Lima',
-'2021-05-10 00:00:00',
+'10/05/2021',
 'Web',
 19.2,
 1032,
@@ -1002,7 +1002,7 @@ insert into pedido values(
 insert into pedido values(
 3062,
 'Rinconada Alta-cv.110717 La Molina, Rinconada Alta, Lima, Lima',
-'2021-05-10 00:00:00',
+'10/05/2021',
 'Web',
 166,
 1022,
@@ -1011,7 +1011,7 @@ insert into pedido values(
 insert into pedido values(
 3063,
 'Alberto Chabrier Cerca A Pezet San Isidro, Santa Monica, Lima, Lima',
-'2021-05-10 00:00:00',
+'10/05/2021',
 'Web',
 105,
 1026,
@@ -1020,7 +1020,7 @@ insert into pedido values(
 insert into pedido values(
 3064,
 'Alt Aramburu, Paralela A Petit Thouars San Isidro, Lima, Lima',
-'2021-05-10 00:00:00',
+'10/05/2021',
 'Web',
 283.5,
 1040,
@@ -1029,7 +1029,7 @@ insert into pedido values(
 insert into pedido values(
 3065,
 'Jiron La Cima 398 Surco, Las Casuarinas Alta, Lima, Lima',
-'2021-05-10 00:00:00',
+'10/05/2021',
 'Web',
 31.2,
 1013,
@@ -1038,7 +1038,7 @@ insert into pedido values(
 insert into pedido values(
 3066,
 'Calle Los Progresistas Los Olivos, Pro, Lima, Lima',
-'2021-05-11 00:00:00',
+'11/05/2021',
 'Web',
 264,
 1009,
@@ -1047,7 +1047,7 @@ insert into pedido values(
 insert into pedido values(
 3067,
 'Final De Los Precursores San Miguel, Maranga, Lima, Lima',
-'2021-05-11 00:00:00',
+'11/05/2021',
 'Web',
 124.8,
 1021,
@@ -1056,7 +1056,7 @@ insert into pedido values(
 insert into pedido values(
 3068,
 'Calle Tejada Cuadra 2 Miraflores, San Antonio, Lima, Lima',
-'2021-05-11 00:00:00',
+'11/05/2021',
 'Web',
 28.799999999999997,
 1006,
@@ -1065,7 +1065,7 @@ insert into pedido values(
 insert into pedido values(
 3069,
 'Av. Del Parque 175 San Isidro, Lima, Lima',
-'2021-05-11 00:00:00',
+'11/05/2021',
 'Web',
 71.2,
 1016,
@@ -1074,7 +1074,7 @@ insert into pedido values(
 insert into pedido values(
 3070,
 'Calle Alcala 240 Ate, Mayorazgo, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 38.4,
 1039,
@@ -1083,7 +1083,7 @@ insert into pedido values(
 insert into pedido values(
 3071,
 'Baltazar La Torre 822 San Isidro, Santa Monica, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 345.7,
 1028,
@@ -1092,7 +1092,7 @@ insert into pedido values(
 insert into pedido values(
 3072,
 'Las Dalias 4 Surco, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 65,
 1016,
@@ -1101,7 +1101,7 @@ insert into pedido values(
 insert into pedido values(
 3073,
 'Calle Hercules 1 Ventanilla, Almirante Miguel Grau, Callao, Callao',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 38.4,
 1025,
@@ -1110,7 +1110,7 @@ insert into pedido values(
 insert into pedido values(
 3074,
 'Calle Monte Pino 141 Surco, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 444.3,
 1035,
@@ -1119,7 +1119,7 @@ insert into pedido values(
 insert into pedido values(
 3075,
 'Monte Azul La Molina, Rinconada Alta, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 198,
 1043,
@@ -1128,7 +1128,7 @@ insert into pedido values(
 insert into pedido values(
 3076,
 'Las Gardenias 120 Planicie La Molina, La Planicie, Lima, Lima',
-'2021-05-12 00:00:00',
+'12/05/2021',
 'Web',
 54,
 1042,
@@ -1137,7 +1137,7 @@ insert into pedido values(
 insert into pedido values(
 3077,
 'Calle Marbella 185 Ate, Mayorazgo, Lima, Lima',
-'2021-05-13 00:00:00',
+'13/05/2021',
 'Web',
 142.8,
 1005,
@@ -1146,7 +1146,7 @@ insert into pedido values(
 insert into pedido values(
 3078,
 'Urb. El Naranjal 2da Etapa Los Olivos, Lima, Lim',
-'2021-05-13 00:00:00',
+'13/05/2021',
 'Web',
 34.4,
 1033,
@@ -1155,7 +1155,7 @@ insert into pedido values(
 insert into pedido values(
 3079,
 'Jr. Las Colinas 708 Surco, Las Casuarinas Baja, Lima, Lima',
-'2021-05-13 00:00:00',
+'13/05/2021',
 'Web',
 353.4,
 1033,
@@ -1164,7 +1164,7 @@ insert into pedido values(
 insert into pedido values(
 3080,
 'Av La Molina 3695 La Molina, El Sol De La Molina, Lima, Lima',
-'2021-05-13 00:00:00',
+'13/05/2021',
 'Web',
 278.99999999999994,
 1043,
@@ -1173,7 +1173,7 @@ insert into pedido values(
 insert into pedido values(
 3081,
 'A Dos Cuadras De Juan De Arona San Isidro, Lima, Lima',
-'2021-05-14 00:00:00',
+'14/05/2021',
 'Web',
 19.5,
 1009,
@@ -1182,7 +1182,7 @@ insert into pedido values(
 insert into pedido values(
 3082,
 'Carlos Ferreyros 932 San Isidro, Corpac, Lima, Lima',
-'2021-05-14 00:00:00',
+'14/05/2021',
 'Web',
 59.3,
 1025,
@@ -1191,7 +1191,7 @@ insert into pedido values(
 insert into pedido values(
 3083,
 'Alameda Del Corregidor Chorrillos, La Encantada De Villa, Lima, Lima',
-'2021-05-14 00:00:00',
+'14/05/2021',
 'Web',
 79.5,
 1045,
@@ -1200,7 +1200,7 @@ insert into pedido values(
 insert into pedido values(
 3084,
 'San Juan De Buena Vista 389 Chorrillos, Lima, Lima',
-'2021-05-14 00:00:00',
+'14/05/2021',
 'Web',
 56.699999999999996,
 1037,
@@ -1209,7 +1209,7 @@ insert into pedido values(
 insert into pedido values(
 3085,
 'Magdalena Del Mar Limite Con San Isidro Magdalena Del Mar, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 65,
 1046,
@@ -1218,7 +1218,7 @@ insert into pedido values(
 insert into pedido values(
 3086,
 'Jr.los Civiles Cuadra 1 Urb. Los Ingenieros La Molina, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 57.599999999999994,
 1004,
@@ -1227,7 +1227,7 @@ insert into pedido values(
 insert into pedido values(
 3087,
 'Av. San Juan Mc Precio Negociable La Molina, Santa Patricia, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 144,
 1029,
@@ -1236,7 +1236,7 @@ insert into pedido values(
 insert into pedido values(
 3088,
 'Frente A Parque Y En Esquina Surco, Vista Alegre, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 175.6,
 1031,
@@ -1245,7 +1245,7 @@ insert into pedido values(
 insert into pedido values(
 3089,
 'Lopez De Ayala 1546 San Borja San Borja, San Borja, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 23.8,
 1024,
@@ -1254,7 +1254,7 @@ insert into pedido values(
 insert into pedido values(
 3090,
 'Linda Casa De Estreno En Venta Calle Las Flores Surco Surco, Santa Rosa, Lima, Lima',
-'2021-05-15 00:00:00',
+'15/05/2021',
 'Web',
 328.5,
 1041,
@@ -1263,7 +1263,7 @@ insert into pedido values(
 insert into pedido values(
 3091,
 'Calle El Ancla La Molina, Las Lagunas De La Molina, Lima, Lima',
-'2021-05-16 00:00:00',
+'16/05/2021',
 'Web',
 38.4,
 1025,
@@ -1272,7 +1272,7 @@ insert into pedido values(
 insert into pedido values(
 3092,
 'Jiron San Francisco 1056 Mz.j7 Lote 13 Villa Maria Del Triunfo, Lima, Lima',
-'2021-05-16 00:00:00',
+'16/05/2021',
 'Web',
 5,
 1006,
@@ -1281,7 +1281,7 @@ insert into pedido values(
 insert into pedido values(
 3093,
 'Calle 32 123 San Isidro, Corpac, Lima, Lima',
-'2021-05-16 00:00:00',
+'16/05/2021',
 'Web',
 250.8,
 1018,
@@ -1290,7 +1290,7 @@ insert into pedido values(
 insert into pedido values(
 3094,
 'Frente A Parque, Alt. De La Cdra 33 De Velasco Astete Surco, Lima, Lima',
-'2021-05-16 00:00:00',
+'16/05/2021',
 'Web',
 189,
 1002,
@@ -1299,7 +1299,7 @@ insert into pedido values(
 insert into pedido values(
 3095,
 'Alt. Av. Andres Razur San Miguel, Lima, Lima',
-'2021-05-16 00:00:00',
+'16/05/2021',
 'Web',
 51.900000000000006,
 1032,
@@ -1308,7 +1308,7 @@ insert into pedido values(
 insert into pedido values(
 3096,
 'Condominio Las Bahias - 00643 Cieneguilla, Lima, Lima',
-'2021-05-17 00:00:00',
+'17/05/2021',
 'Web',
 122.9,
 1017,
@@ -1317,7 +1317,7 @@ insert into pedido values(
 insert into pedido values(
 3097,
 'Mz J2 Lt 27 Villa El Salvador, Pachacamac, Lima, Lima',
-'2021-05-17 00:00:00',
+'17/05/2021',
 'Web',
 236.3,
 1025,
@@ -1326,7 +1326,7 @@ insert into pedido values(
 insert into pedido values(
 3098,
 'Calle Manuel Augusto Olaechea - 00617 Miraflores, Lima, Lima',
-'2021-05-17 00:00:00',
+'17/05/2021',
 'Web',
 67.2,
 1000,
@@ -1335,7 +1335,7 @@ insert into pedido values(
 insert into pedido values(
 3099,
 'Calle Santa Alicia S.m Porres, Lima, Lima',
-'2021-05-20 00:00:00',
+'20/05/2021',
 'Web',
 24,
 1029,
@@ -1350,6 +1350,8 @@ CREATE TABLE MARCA
   PRIMARY KEY (MNAME)
 );
 
+
+
 INSERT INTO MARCA VALUES('Winters' , 'https://winters.com/' );
 INSERT INTO MARCA VALUES('Picaras' , NULL);
 INSERT INTO MARCA VALUES('Noel' , 'https://noel.com.co/');
@@ -1357,8 +1359,8 @@ INSERT INTO MARCA VALUES('Kryzpo' , NULL);
 INSERT INTO MARCA VALUES('Olé Olé' , NULL);
 INSERT INTO MARCA VALUES('Monterrey' , NULL);
 INSERT INTO MARCA VALUES('Chocolisto' , 'https://www.chocolisto.com/');
-INSERT INTO MARCA VALUES('Montblanc' , NULL);
 INSERT INTO MARCA VALUES('Zuko' , NULL);
+INSERT INTO MARCA VALUES('Montblanc' , NULL);
 COMMIT;
 
 CREATE TABLE CATEGORIA
@@ -1384,99 +1386,95 @@ CREATE TABLE SUBCAT
 );
 
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Chocolate');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Bombones');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Marshmallow');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Chocopunch');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Chocopaleton');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GOLOSINAS',
 'Toffee');
 
-insert into SUBCAT values(
+insert into subcat values(
 'BEBIDAS',
 'Cocoa');
 
-insert into SUBCAT values(
+insert into subcat values(
 'BEBIDAS',
 'Refresco en polvo');
 
-insert into SUBCAT values(
+insert into subcat values(
 'BEBIDAS',
 'Chocolate en polvo');
 
-insert into SUBCAT values(
+insert into subcat values(
 'BEBIDAS',
 'Café');
 
-insert into SUBCAT values(
+insert into subcat values(
 'BEBIDAS',
 'Capuccino');
 
-insert into SUBCAT values(
+insert into subcat values(
 'PANETONES',
 'Estandar');
 
-insert into SUBCAT values(
+insert into subcat values(
 'PANETONES',
 'Chocochispas');
 
-insert into SUBCAT values(
+insert into subcat values(
 'GALLETAS',
 'Dulce');
 
-insert into SUBCAT values(
+insert into subcat values(
 'SNACKS',
 'Maní');
 
-insert into SUBCAT values(
+insert into subcat values(
 'SNACKS',
 'Maní confitado');
 
-insert into SUBCAT values(
+insert into subcat values(
 'SNACKS',
 'Patatas fritas');
 
-insert into SUBCAT values(
-'REPOSTERÍA',
-'Cocoa');
-
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Cobertura');
 
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Chispas');
 
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Batons');
 
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Crema avellana');
 
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Discos de chocolate');
 
-insert into SUBCAT values(
+insert into subcat values(
 'REPOSTERÍA',
 'Grageas');
 
@@ -1484,10 +1482,10 @@ insert into SUBCAT values(
 
 CREATE TABLE PRODUCTO
 (
-  PRECIO NUMBER(10,2),
+  PRECIO NUMBER(10),
   SKU NUMBER(10),
   NOMBRE VARCHAR2(50),
-  PESO NUMBER(3,2),
+  PESO NUMBER(20),
   MNAME VARCHAR2(50),
   SUBC VARCHAR2(50),
   PRIMARY KEY (SKU),
@@ -1887,6 +1885,7 @@ insert into producto values(
 'Montblanc',
 'Chocolate');
 
+
 CREATE TABLE DETALLE 
 (
   MONTO NUMBER(10),
@@ -1894,8 +1893,12 @@ CREATE TABLE DETALLE
   PCOD NUMBER(10),
   SKU NUMBER(10),
   VENTA_K NUMBER(10),
-  PRIMARY KEY (PCOD,SKU)
+  PRIMARY KEY (PCOD, SKU),
+  FOREIGN KEY (PCOD) REFERENCES PEDIDO(PCOD),
+  FOREIGN KEY (SKU) REFERENCES PRODUCTO(SKU)
 );
+
+
 insert into detalle values(
 28.799999999999997,
 3,
@@ -2878,6 +2881,7 @@ insert into detalle values(
 
 
 
+
 CREATE TABLE ALMACEN
 (
     ANAME VARCHAR2(50),
@@ -2906,11 +2910,9 @@ CREATE TABLE STOCK
     ANAME VARCHAR2(50),
     SKU NUMBER(10),
     STOCK NUMBER(10),
-    PRIMARY KEY (ANAME, SKU),
     FOREIGN KEY (ANAME) REFERENCES ALMACEN,
     FOREIGN KEY (SKU) REFERENCES PRODUCTO
 );
-
 
 insert into stock values(
 'Almacen San Borja',
@@ -3158,3 +3160,7 @@ insert into stock values(
 173);
 
 
+-- EJECUTAR PARA PODER USAR LOS WHERE EN LOS SELECT
+
+--exec dbms_stats.gather_dictionary_stats;
+--exec dbms_stats.gather_fixed_objects_stats;
