@@ -323,18 +323,19 @@ public class Users extends javax.swing.JPanel {
             }
             else{
                 Statement stm = reg.createStatement();
-                ResultSet counter = stm.executeQuery("select distinct  usuario.* , (select count(*) "
-                        + "from pedido p2 where p2.ucod = usuario.ucod) cuenta "
-                        + "from usuario, pedido "
-                        + "where usuario.ucod = pedido.ucod "
-                        + "order by 1");
+                String sql = "select distinct  usuario.* , "
+                        + "(select count(*) from pedido p2 where p2.ucod = usuario.ucod) cuenta "
+                        + " from usuario "
+                        + " order by 1";
+                
+                ResultSet counter = stm.executeQuery(sql);
 
                 int count = 0;
                 while(counter.next()){count++;}
 
                 String list[][] = new String[count][4];
                 int i = 0;
-                ResultSet re = stm.executeQuery("SELECT * FROM USUARIO");
+                ResultSet re = stm.executeQuery(sql);
                 while(re.next()){
                     list[i][0] = re.getString("UCOD");
                     list[i][1] = re.getString("NOMBRE");
@@ -374,20 +375,25 @@ public class Users extends javax.swing.JPanel {
                 javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
             else{
+                String sql = "select distinct  usuario.* , "
+                        + "(select count(*) from pedido p2 where p2.ucod = usuario.ucod) cuenta "
+                        + " from usuario, pedido "
+                        + " order by 1";
                 
                 Statement stm = reg.createStatement();
-                ResultSet counter = stm.executeQuery("SELECT * FROM USUARIO");
+                ResultSet counter = stm.executeQuery(sql);
 
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][3];
+                String list[][] = new String[count][4];
                 int i = 0;
-                ResultSet re = stm.executeQuery("SELECT * FROM USUARIO");
+                ResultSet re = stm.executeQuery(sql);
                 while(re.next()){
                     list[i][0] = re.getString("UCOD");
                     list[i][1] = re.getString("NOMBRE");
                     list[i][2] = re.getString("CORREO");
+                    list[i][3] = re.getString("cuenta");
                     i++;
                 }
                 int id = Integer.parseInt(list[idcell][0]);
@@ -418,25 +424,30 @@ public class Users extends javax.swing.JPanel {
         try {
             String inf =  usrnm.getText().toUpperCase();
             Statement stm = reg.createStatement();
-            ResultSet counter = stm.executeQuery("SELECT * FROM USUARIO WHERE NOMBRE LIKE '"+inf+"%'");
+            String sql = "select distinct  usuario.* , "
+                    + "(select count(*) from pedido p2 where p2.ucod = usuario.ucod) cuenta "
+                    + "from usuario  "
+                    + "where (nombre) like '"+inf+"%' order by 1";
+            ResultSet counter = stm.executeQuery(sql);
             
             int count = 0;
             while(counter.next()){count++;}
             
-            String list[][] = new String[count][3];
+            String list[][] = new String[count][4];
             int i = 0;
-            ResultSet re = stm.executeQuery("SELECT * FROM USUARIO WHERE NOMBRE LIKE '"+inf+"%'");
+            ResultSet re = stm.executeQuery(sql);
             while(re.next()){
                 list[i][0] = re.getString("UCOD");
                 list[i][1] = re.getString("NOMBRE");
                 list[i][2] = re.getString("CORREO");
+                list[i][3] = re.getString("cuenta");
                 i++;
             }
             
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
                     list,
                     new String [] {
-                        "UCOD", "Nombre", "CORREO",
+                        "UCOD", "Nombre", "CORREO","CANT. PEDIDOS"
                     }));
         } catch (SQLException ex) {
             Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
@@ -452,25 +463,31 @@ public class Users extends javax.swing.JPanel {
     
     private void GetUsers() throws SQLException{
         Statement stm = reg.createStatement();
-        ResultSet counter = stm.executeQuery("SELECT * FROM USUARIO");
+        String sql = "select distinct  usuario.* , "
+                + "(select count(*) from pedido p2 where p2.ucod = usuario.ucod)"
+                + " cuenta from usuario "
+                + " order by 1";
+        
+        ResultSet counter = stm.executeQuery(sql);
         
         int count = 0;
         while(counter.next()){count++;}
         
-        String list[][] = new String[count][3];
+        String list[][] = new String[count][4];
         int i = 0;
-        ResultSet re = stm.executeQuery("SELECT * FROM USUARIO");
+        ResultSet re = stm.executeQuery(sql);
         while(re.next()){
             list[i][0] = re.getString("UCOD");
             list[i][1] = re.getString("NOMBRE");
             list[i][2] = re.getString("CORREO");
+            list[i][3] = re.getString("cuenta");
             i++;
         }
         
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         list,
         new String [] {
-            "UCOD", "NOMBRE", "CORREO"
+            "UCOD", "NOMBRE", "CORREO" , "CANT. PEDIDOS"
         }));
     }
 
