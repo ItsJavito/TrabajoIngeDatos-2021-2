@@ -254,7 +254,7 @@ public class Books extends javax.swing.JPanel {
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
         // Abrir sección
-        UpBooks p1 = new UpBooks();
+        UpStocks p1 = new UpStocks();
         p1.setSize(750, 430);
         p1.setLocation(0,0);
 
@@ -412,7 +412,7 @@ public class Books extends javax.swing.JPanel {
                     String bstock = list[idcell][10];
                     String bavai = list[idcell][11];            
 
-                    UpBooks p1 = new UpBooks(bid, btitle, bdate, bauthor, bcategory, bedit, blang, bpages, bdesc, bejem, bstock, bavai);
+                    UpStocks p1 = new UpStocks(bid, btitle, bdate, bauthor, bcategory, bedit, blang, bpages, bdesc, bejem, bstock, bavai);
                     p1.setSize(750, 430);
                     p1.setLocation(5, 5);
 

@@ -16,6 +16,10 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import static itp_library.Dashboard.content;
+import java.awt.BorderLayout;
+import java.awt.HeadlessException;
+
 /**
  *
  * @author Antonio
@@ -51,7 +55,7 @@ public class Stocks extends javax.swing.JPanel {
         Title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        button = new javax.swing.JPanel();
+        aniadirStock = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         nom_prod = new javax.swing.JTextField();
@@ -143,22 +147,22 @@ public class Stocks extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 750, 280));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        button.addMouseListener(new java.awt.event.MouseAdapter() {
+        aniadirStock.setBackground(new java.awt.Color(18, 90, 173));
+        aniadirStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        aniadirStock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonMouseEntered(evt);
+                aniadirStockMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonMouseExited(evt);
+                aniadirStockMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                buttonMousePressed(evt);
+                aniadirStockMousePressed(evt);
             }
         });
-        button.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        aniadirStock.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,9 +173,9 @@ public class Stocks extends javax.swing.JPanel {
                 jLabel1MousePressed(evt);
             }
         });
-        button.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
+        aniadirStock.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
 
-        add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 140, 30));
+        add(aniadirStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 140, 30));
 
         jSeparator2.setForeground(new java.awt.Color(0, 153, 255));
         jSeparator2.setPreferredSize(new java.awt.Dimension(250, 10));
@@ -299,7 +303,7 @@ public class Stocks extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Eliminar");
+        jLabel14.setText("Editar");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel14MousePressed(evt);
@@ -510,28 +514,35 @@ public class Stocks extends javax.swing.JPanel {
         //nothing
     }//GEN-LAST:event_jTable1InputMethodTextChanged
 
-    private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        setColor(button);
-    }//GEN-LAST:event_buttonMouseEntered
+    private void aniadirStockMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStockMouseEntered
+        setColor(aniadirStock);
+    }//GEN-LAST:event_aniadirStockMouseEntered
 
-    private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
-        resetColor(button);
-    }//GEN-LAST:event_buttonMouseExited
+    private void aniadirStockMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStockMouseExited
+        resetColor(aniadirStock);
+    }//GEN-LAST:event_aniadirStockMouseExited
 
-    private void buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMousePressed
-        try {
-            GetReports();
-        } catch (SQLException ex) {
-            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_buttonMousePressed
+    private void aniadirStockMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStockMousePressed
+
+        UpStocks p1 = new UpStocks();
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_aniadirStockMousePressed
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-        try {
-            GetReports();
-        } catch (SQLException ex) {
-            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        UpStocks p1 = new UpStocks();
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void nom_prodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_prodMousePressed
@@ -597,7 +608,11 @@ public class Stocks extends javax.swing.JPanel {
     }//GEN-LAST:event_button5MousePressed
 
     private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
-        // TODO add your handling code here:
+        try{
+            passToUpStocks();
+        }catch (SQLException ex) {
+            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel14MousePressed
 
     private void jLabel15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MousePressed
@@ -721,7 +736,12 @@ public class Stocks extends javax.swing.JPanel {
     }//GEN-LAST:event_button13MouseExited
 
     private void button13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button13MousePressed
-        // TODO add your handling code here:
+        //editar 
+        try{
+            passToUpStocks();
+        }catch (SQLException ex) {
+            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button13MousePressed
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
@@ -753,6 +773,45 @@ public class Stocks extends javax.swing.JPanel {
     }
     void resetColor(JPanel panel){
         panel.setBackground(new Color(18,90,173));
+    }
+    
+    public void passToUpStocks() throws SQLException{
+        try{
+            int pos = jTable1.getSelectedRow();
+            if(pos <= -1){
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un stock. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            Statement st = reg.createStatement();
+            String sql = "SELECT * FROM STOCK , PRODUCTO , ALMACEN   "
+                + "WHERE ALMACEN.ANAME = STOCK.ANAME AND "
+                + "STOCK.SKU = PRODUCTO.SKU ORDER BY PRODUCTO.SKU";
+            ResultSet counter = st.executeQuery(sql);
+            int cont = 0;
+            while(counter.next()) cont++;
+            String[][] list = new String[cont][4];
+            int i = 0;
+            
+            ResultSet re = st.executeQuery(sql);
+            while(re.next()){
+                list[i][0] = re.getString("SKU");
+                list[i][1] = re.getString("NOMBRE");
+                list[i][2] = re.getNString("ANAME");
+                list[i][3] = re.getString("STOCK");
+                i++;
+            }
+            UpStocks p2 = new UpStocks(list[pos][2] ,list[pos][1] , list[pos][3] , list[pos][0]);
+            p2.setSize(750, 430);
+            p2.setLocation(0, 0);
+
+            content.removeAll();
+            content.add(p2, BorderLayout.CENTER);
+            content.revalidate();
+            content.repaint();
+            
+        }catch (SQLException ex) {
+            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void GetReports() throws SQLException{
@@ -830,14 +889,10 @@ public class Stocks extends javax.swing.JPanel {
             }
     }
     
-    public void añadir(){
-
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
+    private javax.swing.JPanel aniadirStock;
     private javax.swing.JPanel body;
-    private javax.swing.JPanel button;
     private javax.swing.JPanel button1;
     private javax.swing.JPanel button13;
     private javax.swing.JPanel button14;
