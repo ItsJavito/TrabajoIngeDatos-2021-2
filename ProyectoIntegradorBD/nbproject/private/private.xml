@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/Dashboard.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/Stocks.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/Principal.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/Users.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/UpUsers.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/Returns.java</file>
-            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/itp_library/UpBooks.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Users.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Dashboard.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Principal.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/calendar-multiple-check.png</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Stocks.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpStocks.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/home-outline.png</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/account-multiple.png</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/calendar-plus.png</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpUsers.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Pedidos.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Connect.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/1519903673880.jpg</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/book-open-page-variant.png</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/images/file-chart.png</file>
         </group>
     </open-files>
 </project-private>

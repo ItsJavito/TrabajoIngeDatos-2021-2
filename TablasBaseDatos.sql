@@ -3162,5 +3162,5 @@ insert into stock values(
 
 -- EJECUTAR PARA PODER USAR LOS WHERE EN LOS SELECT
 
---exec dbms_stats.gather_dictionary_stats;
+exec dbms_stats.gather_dictionary_stats;
 --exec dbms_stats.gather_fixed_objects_stats;
