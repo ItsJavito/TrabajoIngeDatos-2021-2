@@ -12,13 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import static PI_library.Dashboard.content;
 import java.awt.BorderLayout;
-import java.awt.HeadlessException;
+import oracle.net.aso.n;
 
 /**
  *
@@ -63,7 +61,7 @@ public class Stocks extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         nom_almacen = new javax.swing.JTextField();
-        button5 = new javax.swing.JPanel();
+        btn_delete = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         button13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -251,25 +249,25 @@ public class Stocks extends javax.swing.JPanel {
         });
         add(nom_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 270, 30));
 
-        button5.setBackground(new java.awt.Color(18, 90, 173));
-        button5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        button5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_delete.setBackground(new java.awt.Color(18, 90, 173));
+        btn_delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button5MouseEntered(evt);
+                btn_deleteMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                button5MouseExited(evt);
+                btn_deleteMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                button5MousePressed(evt);
+                btn_deleteMousePressed(evt);
             }
         });
-        button5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btn_delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Actualizar");
+        jLabel6.setText("Eliminar");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel6MouseEntered(evt);
@@ -281,9 +279,9 @@ public class Stocks extends javax.swing.JPanel {
                 jLabel6MousePressed(evt);
             }
         });
-        button5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
+        btn_delete.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
 
-        add(button5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 140, 30));
+        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 140, 30));
 
         button13.setBackground(new java.awt.Color(18, 90, 173));
         button13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -585,27 +583,29 @@ public class Stocks extends javax.swing.JPanel {
 
     private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MousePressed
        try {
+            deleteStock();
             GetReports();
         } catch (SQLException ex) {
             Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel6MousePressed
 
-    private void button5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button5MouseEntered
-        setColor(button5);
-    }//GEN-LAST:event_button5MouseEntered
+    private void btn_deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseEntered
+        setColor(btn_delete);
+    }//GEN-LAST:event_btn_deleteMouseEntered
 
-    private void button5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button5MouseExited
-        resetColor(button5);
-    }//GEN-LAST:event_button5MouseExited
+    private void btn_deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseExited
+        resetColor(btn_delete);
+    }//GEN-LAST:event_btn_deleteMouseExited
 
-    private void button5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button5MousePressed
+    private void btn_deleteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMousePressed
         try {
+            deleteStock();
             GetReports();
         } catch (SQLException ex) {
             Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_button5MousePressed
+    }//GEN-LAST:event_btn_deleteMousePressed
 
     private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
         try{
@@ -745,11 +745,11 @@ public class Stocks extends javax.swing.JPanel {
     }//GEN-LAST:event_button13MousePressed
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-        setColor(button5);
+        setColor(btn_delete);
     }//GEN-LAST:event_jLabel6MouseEntered
 
     private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
-        resetColor(button5);
+        resetColor(btn_delete);
     }//GEN-LAST:event_jLabel6MouseExited
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
@@ -889,10 +889,26 @@ public class Stocks extends javax.swing.JPanel {
             }
     }
     
+    private void deleteStock() throws SQLException{
+        int row = jTable1.getSelectedRow();
+        if(row >= 0){
+            Statement st = reg.createStatement();
+            String sku = (String) jTable1.getModel().getValueAt(row, 0);
+            String aname = (String) jTable1.getModel().getValueAt(row, 2);
+            String sql = "DELETE FROM STOCK WHERE SKU = "+sku+" AND ANAME = '"+aname+"'"; 
+            st.executeUpdate(sql);
+            javax.swing.JOptionPane.showMessageDialog(this, "Se ha borrado con éxito \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
     private javax.swing.JPanel aniadirStock;
     private javax.swing.JPanel body;
+    private javax.swing.JPanel btn_delete;
     private javax.swing.JPanel button1;
     private javax.swing.JPanel button13;
     private javax.swing.JPanel button14;
@@ -902,7 +918,6 @@ public class Stocks extends javax.swing.JPanel {
     private javax.swing.JPanel button18;
     private javax.swing.JPanel button19;
     private javax.swing.JPanel button20;
-    private javax.swing.JPanel button5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

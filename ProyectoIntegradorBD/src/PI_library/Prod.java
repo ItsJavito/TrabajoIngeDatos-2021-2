@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -123,6 +124,17 @@ public class Prod extends javax.swing.JPanel {
         jLabel2.setText("Actualizar ");
         jLabel2.setToolTipText("");
         jLabel2.setVerifyInputWhenFocusTarget(false);
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
         btn_updt.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 40));
 
         add(btn_updt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 130, 40));
@@ -292,7 +304,30 @@ public class Prod extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_updtMouseExited
 
     private void btn_updtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_updtMousePressed
-        // TODO add your handling code here:
+        UpProd p1 = null;
+        int row = jTable1.getSelectedRow();
+        if(row >= 0){
+            // UpProd(String sku , String nombre, String precio , String peso , String marca, String subCat)
+            TableModel model = jTable1.getModel();
+            String sku = String.valueOf(model.getValueAt(row, 0));
+            String precio = String.valueOf(model.getValueAt(row, 1));
+            String name = String.valueOf(model.getValueAt(row, 2));
+            String peso = String.valueOf(model.getValueAt(row, 3));
+            String marca = String.valueOf(model.getValueAt(row, 4));
+            String subc = String.valueOf(model.getValueAt(row, 5));
+            p1 = new UpProd(sku, name, precio , peso, marca, subc);
+        }else{
+             javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+             return;
+        }
+        
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }//GEN-LAST:event_btn_updtMousePressed
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
@@ -303,6 +338,41 @@ public class Prod extends javax.swing.JPanel {
             Logger.getLogger(Prod.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        UpProd p1 = null;
+        int row = jTable1.getSelectedRow();
+        if(row >= 0){
+            // UpProd(String sku , String nombre, String precio , String peso , String marca, String subCat)
+            TableModel model = jTable1.getModel();
+            String sku = String.valueOf(model.getValueAt(row, 0));
+            String precio = String.valueOf(model.getValueAt(row, 1));
+            String name = String.valueOf(model.getValueAt(row, 2));
+            String peso = String.valueOf(model.getValueAt(row, 3));
+            String marca = String.valueOf(model.getValueAt(row, 4));
+            String subc = String.valueOf(model.getValueAt(row, 5));
+            p1 = new UpProd(sku, name, precio , peso, marca, subc);
+        }else{
+             javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+             return;
+        }
+        
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_jLabel2MousePressed
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        setColor(btn_updt);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        resetColor(btn_updt);
+    }//GEN-LAST:event_jLabel2MouseExited
 
     
     //----------------------FUNCIONES----------------------------
