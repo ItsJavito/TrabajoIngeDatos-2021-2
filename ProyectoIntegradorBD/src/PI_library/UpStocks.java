@@ -163,7 +163,7 @@ public class UpStocks extends javax.swing.JPanel {
         jSeparator3.setForeground(new java.awt.Color(204, 204, 204));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setPreferredSize(new java.awt.Dimension(200, 10));
-        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 10, 350));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 10, 350));
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered

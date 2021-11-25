@@ -49,6 +49,7 @@ public class Pedidos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         body = new javax.swing.JPanel();
         monto_final = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -61,6 +62,8 @@ public class Pedidos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Title1 = new javax.swing.JLabel();
+
+        jTextField1.setText("jTextField1");
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(750, 430));
@@ -148,13 +151,13 @@ public class Pedidos extends javax.swing.JPanel {
         });
         ver_detalle.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Ver detalle");
-        ver_detalle.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 30));
+        ver_detalle.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 110, 30));
 
-        add(ver_detalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 130, 30));
+        add(ver_detalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 150, 30));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -204,7 +207,7 @@ public class Pedidos extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 750, 300));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 720, 270));
 
         Title1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Title1.setText("Pedidos");
@@ -374,6 +377,7 @@ public class Pedidos extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel monto_final;
     private javax.swing.JPanel ver_detalle;
     // End of variables declaration//GEN-END:variables
