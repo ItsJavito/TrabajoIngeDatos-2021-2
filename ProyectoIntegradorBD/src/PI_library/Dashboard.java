@@ -559,7 +559,7 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(btn_users);
         resetColor(btn_reports);
         // Abrir sección
-        Users p1 = new Users();
+        Prod p1 = new Prod();
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
