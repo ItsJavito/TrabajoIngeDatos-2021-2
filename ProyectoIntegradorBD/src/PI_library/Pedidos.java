@@ -51,7 +51,6 @@ public class Pedidos extends javax.swing.JPanel {
 
         jTextField1 = new javax.swing.JTextField();
         body = new javax.swing.JPanel();
-        monto_final = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         cliente_name = new javax.swing.JTextField();
         button = new javax.swing.JPanel();
@@ -62,6 +61,7 @@ public class Pedidos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Title1 = new javax.swing.JLabel();
+        monto_final = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -73,9 +73,6 @@ public class Pedidos extends javax.swing.JPanel {
         body.setBackground(new java.awt.Color(255, 255, 255));
         body.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        monto_final.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        add(monto_final, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 350, 30));
 
         jSeparator2.setForeground(new java.awt.Color(0, 153, 255));
         jSeparator2.setPreferredSize(new java.awt.Dimension(250, 10));
@@ -155,9 +152,9 @@ public class Pedidos extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Ver detalle");
-        ver_detalle.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 110, 30));
+        ver_detalle.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(ver_detalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 150, 30));
+        add(ver_detalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -212,6 +209,9 @@ public class Pedidos extends javax.swing.JPanel {
         Title1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Title1.setText("Pedidos");
         add(Title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        monto_final.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        add(monto_final, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 230, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cliente_nameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cliente_nameMousePressed

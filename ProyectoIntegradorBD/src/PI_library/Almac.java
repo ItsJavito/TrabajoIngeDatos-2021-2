@@ -52,11 +52,11 @@ public class Almac extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         btn_delete = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        Title1 = new javax.swing.JLabel();
         btn_updt = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_add = new javax.swing.JPanel();
         lbl_add = new javax.swing.JLabel();
-        Title1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(750, 430));
@@ -111,14 +111,20 @@ public class Almac extends javax.swing.JPanel {
                 jLabel1MousePressed(evt);
             }
         });
-        btn_delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 40));
+        btn_delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
         add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 130, 40));
+
+        Title1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Title1.setText("Almacenes");
+        add(Title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 190, 70));
 
         btn_updt.setBackground(new java.awt.Color(18, 90, 173));
         btn_updt.setForeground(new java.awt.Color(18, 90, 173));
         btn_updt.setToolTipText("");
         btn_updt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_updt.setMinimumSize(new java.awt.Dimension(110, 40));
+        btn_updt.setPreferredSize(new java.awt.Dimension(110, 40));
         btn_updt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_updtMouseEntered(evt);
@@ -149,9 +155,9 @@ public class Almac extends javax.swing.JPanel {
                 jLabel2MousePressed(evt);
             }
         });
-        btn_updt.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 40));
+        btn_updt.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(btn_updt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 130, 40));
+        add(btn_updt, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 130, 40));
 
         btn_add.setBackground(new java.awt.Color(18, 90, 173));
         btn_add.setForeground(new java.awt.Color(18, 90, 173));
@@ -189,11 +195,7 @@ public class Almac extends javax.swing.JPanel {
         });
         btn_add.add(lbl_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 40));
 
-        add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 130, 40));
-
-        Title1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Title1.setText("Almacenes");
-        add(Title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 190, 70));
+        add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered

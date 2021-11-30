@@ -137,15 +137,15 @@ public class Stocks extends javax.swing.JPanel {
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jTable1InputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 750, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 750, 260));
 
         aniadirStock.setBackground(new java.awt.Color(18, 90, 173));
         aniadirStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -171,9 +171,9 @@ public class Stocks extends javax.swing.JPanel {
                 jLabel1MousePressed(evt);
             }
         });
-        aniadirStock.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
+        aniadirStock.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(aniadirStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 140, 30));
+        add(aniadirStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 130, 40));
 
         jSeparator2.setForeground(new java.awt.Color(0, 153, 255));
         jSeparator2.setPreferredSize(new java.awt.Dimension(250, 10));
@@ -279,9 +279,9 @@ public class Stocks extends javax.swing.JPanel {
                 jLabel6MousePressed(evt);
             }
         });
-        btn_delete.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
+        btn_delete.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 140, 30));
+        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 130, 40));
 
         button13.setBackground(new java.awt.Color(18, 90, 173));
         button13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -301,13 +301,13 @@ public class Stocks extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Editar");
+        jLabel14.setText("Actualizar");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel14MousePressed(evt);
             }
         });
-        button13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 30));
+        button13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
         button14.setBackground(new java.awt.Color(18, 90, 173));
         button14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -505,7 +505,7 @@ public class Stocks extends javax.swing.JPanel {
 
         button13.add(button17, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 140, 30));
 
-        add(button13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 140, 30));
+        add(button13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged

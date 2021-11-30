@@ -132,13 +132,13 @@ public class Users extends javax.swing.JPanel {
         });
         delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrar");
-        delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
+        delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 395, 80, -1));
+        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 130, 40));
 
         edit.setBackground(new java.awt.Color(18, 90, 173));
         edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -155,13 +155,13 @@ public class Users extends javax.swing.JPanel {
         });
         edit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Editar");
-        edit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
+        jLabel2.setText("Actualizar");
+        edit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 395, 80, -1));
+        add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 130, 40));
 
         nuevo.setBackground(new java.awt.Color(18, 90, 173));
         nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -178,7 +178,7 @@ public class Users extends javax.swing.JPanel {
         });
         nuevo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nuevo");
@@ -187,9 +187,9 @@ public class Users extends javax.swing.JPanel {
                 jLabel3MousePressed(evt);
             }
         });
-        nuevo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
+        nuevo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 395, 80, -1));
+        add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 130, 40));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -242,7 +242,7 @@ public class Users extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 750, 300));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 750, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void usrnmMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usrnmMousePressed

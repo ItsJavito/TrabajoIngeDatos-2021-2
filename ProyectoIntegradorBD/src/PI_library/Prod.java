@@ -135,9 +135,9 @@ public class Prod extends javax.swing.JPanel {
                 jLabel2MousePressed(evt);
             }
         });
-        btn_updt.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 40));
+        btn_updt.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(btn_updt, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 130, 40));
+        add(btn_updt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 130, 40));
 
         btn_add.setBackground(new java.awt.Color(18, 90, 173));
         btn_add.setForeground(new java.awt.Color(18, 90, 173));
@@ -175,7 +175,7 @@ public class Prod extends javax.swing.JPanel {
         });
         btn_add.add(lbl_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 40));
 
-        add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 130, 40));
+        add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 130, 40));
 
         btn_delete.setBackground(new java.awt.Color(18, 90, 173));
         btn_delete.setForeground(new java.awt.Color(18, 90, 173));
@@ -211,9 +211,9 @@ public class Prod extends javax.swing.JPanel {
                 jLabel1MousePressed(evt);
             }
         });
-        btn_delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 100, 40));
+        btn_delete.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 40));
 
-        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 130, 40));
+        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 130, 40));
 
         Title1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Title1.setText("PRODUCTOS");
