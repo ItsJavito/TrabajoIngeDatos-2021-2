@@ -317,7 +317,7 @@ public class Prod extends javax.swing.JPanel {
             String subc = String.valueOf(model.getValueAt(row, 5));
             p1 = new UpProd(sku, name, precio , peso, marca, subc);
         }else{
-             javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+             javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
              return;
         }
         
@@ -353,7 +353,7 @@ public class Prod extends javax.swing.JPanel {
             String subc = String.valueOf(model.getValueAt(row, 5));
             p1 = new UpProd(sku, name, precio , peso, marca, subc);
         }else{
-             javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+             javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
              return;
         }
         
@@ -407,7 +407,7 @@ public class Prod extends javax.swing.JPanel {
                 javax.swing.JOptionPane.showMessageDialog(this, "Se ha borrado correctamente el producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el producto a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
         }catch (HeadlessException | SQLException ex) {
             Logger.getLogger(Prod.class.getName()).log(Level.SEVERE, null, ex);

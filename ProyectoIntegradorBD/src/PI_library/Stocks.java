@@ -900,7 +900,7 @@ public class Stocks extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, "Se ha borrado con éxito \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             
         }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un stock \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     }
     

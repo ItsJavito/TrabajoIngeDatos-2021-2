@@ -250,7 +250,7 @@ public class Almac extends javax.swing.JPanel {
             String dir = String.valueOf(model.getValueAt(row, 1));
             p1 = new UpAlmac(name , dir);
         }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un almacén. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             return;
         }
 
@@ -281,7 +281,7 @@ public class Almac extends javax.swing.JPanel {
             String dir = String.valueOf(model.getValueAt(row, 1));
             p1 = new UpAlmac(name , dir);
         }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un almacén. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             return;
         }
 
@@ -356,7 +356,7 @@ public class Almac extends javax.swing.JPanel {
             st.executeUpdate(sql);
             javax.swing.JOptionPane.showMessageDialog(this, "Se ha borrado con éxito. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "SE DEBE SELECCIONAR UNA FILA. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un almacén. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     }
     

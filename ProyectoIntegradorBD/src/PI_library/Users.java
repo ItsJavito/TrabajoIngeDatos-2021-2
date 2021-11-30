@@ -319,13 +319,13 @@ public class Users extends javax.swing.JPanel {
         try {
             int idcell = jTable1.getSelectedRow();
             if(idcell <= -1){
-                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un usuario. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 Statement stm = reg.createStatement();
                 int id = Integer.valueOf(jTable1.getModel().getValueAt(idcell, 0).toString());
                 if(id <= 0){
-                    javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un usuario. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
                     Statement stm2=null;
@@ -352,7 +352,7 @@ public class Users extends javax.swing.JPanel {
         try {
             int idcell = jTable1.getSelectedRow();
             if(idcell <= -1){
-                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un usuario. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 String sql = "select distinct  usuario.* , "
