@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/PI_library/Stocks.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>875</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Users.java</file>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Dashboard.java</file>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Almac.java</file>
+            <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpAlmac.java</file>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Pedidos.java</file>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpUsers.java</file>
             <file>file:/C:/Users/javie/Desktop/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Prod.java</file>
