@@ -54,7 +54,7 @@ public class Stocks extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         aniadirStock = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        mov_alm = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         nom_prod = new javax.swing.JTextField();
         button1 = new javax.swing.JPanel();
@@ -79,6 +79,8 @@ public class Stocks extends javax.swing.JPanel {
         jLabel20 = new javax.swing.JLabel();
         button20 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
+        aniadirStock1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(750, 430));
@@ -137,10 +139,10 @@ public class Stocks extends javax.swing.JPanel {
         });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jTable1InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -162,18 +164,18 @@ public class Stocks extends javax.swing.JPanel {
         });
         aniadirStock.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Añadir");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        mov_alm.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mov_alm.setForeground(new java.awt.Color(255, 255, 255));
+        mov_alm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mov_alm.setText("Mover Alm.");
+        mov_alm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel1MousePressed(evt);
+                mov_almMousePressed(evt);
             }
         });
-        aniadirStock.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+        aniadirStock.add(mov_alm, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(aniadirStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 130, 40));
+        add(aniadirStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 130, 40));
 
         jSeparator2.setForeground(new java.awt.Color(0, 153, 255));
         jSeparator2.setPreferredSize(new java.awt.Dimension(250, 10));
@@ -506,6 +508,34 @@ public class Stocks extends javax.swing.JPanel {
         button13.add(button17, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 140, 30));
 
         add(button13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 130, 40));
+
+        aniadirStock1.setBackground(new java.awt.Color(18, 90, 173));
+        aniadirStock1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        aniadirStock1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aniadirStock1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aniadirStock1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                aniadirStock1MousePressed(evt);
+            }
+        });
+        aniadirStock1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Añadir");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel3MousePressed(evt);
+            }
+        });
+        aniadirStock1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        add(aniadirStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged
@@ -532,8 +562,13 @@ public class Stocks extends javax.swing.JPanel {
         content.repaint();
     }//GEN-LAST:event_aniadirStockMousePressed
 
-    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-        UpStocks p1 = new UpStocks();
+    private void mov_almMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mov_almMousePressed
+        MoveStocks p1 = null;
+        try {
+            p1 = new MoveStocks();
+        } catch (SQLException ex) {
+            Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
+        }
         p1.setSize(750, 430);
         p1.setLocation(0, 0);
 
@@ -541,7 +576,7 @@ public class Stocks extends javax.swing.JPanel {
         content.add(p1, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-    }//GEN-LAST:event_jLabel1MousePressed
+    }//GEN-LAST:event_mov_almMousePressed
 
     private void nom_prodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nom_prodMousePressed
         if(nom_prod.getText().equals("Ingrese el nombre del producto"))
@@ -768,6 +803,22 @@ public class Stocks extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jLabel2MousePressed
 
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MousePressed
+
+    private void aniadirStock1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStock1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aniadirStock1MouseEntered
+
+    private void aniadirStock1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStock1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aniadirStock1MouseExited
+
+    private void aniadirStock1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStock1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aniadirStock1MousePressed
+
     void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));
     }
@@ -907,6 +958,7 @@ public class Stocks extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
     private javax.swing.JPanel aniadirStock;
+    private javax.swing.JPanel aniadirStock1;
     private javax.swing.JPanel body;
     private javax.swing.JPanel btn_delete;
     private javax.swing.JPanel button1;
@@ -918,7 +970,6 @@ public class Stocks extends javax.swing.JPanel {
     private javax.swing.JPanel button18;
     private javax.swing.JPanel button19;
     private javax.swing.JPanel button20;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -928,11 +979,13 @@ public class Stocks extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel mov_alm;
     private javax.swing.JTextField nom_almacen;
     private javax.swing.JTextField nom_prod;
     // End of variables declaration//GEN-END:variables

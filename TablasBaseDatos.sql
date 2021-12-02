@@ -3193,19 +3193,6 @@ begin
         return -1; 
 end;
 
-CREATE OR REPLACE PROCEDURE moveStocks(name1 varchar2, sku number, name2 varchar2 , cantidad number) is 
-temp number(5);
-begin
-    temp := cantStocks(name1, sku, cantidad);
-    DBMS_OUTPUT.PUT_LINE(temp);
-    if temp = -1 then 
-        DBMS_OUTPUT.PUT_LINE('No se encuentra dicho producto en almacen');
-    else 
-        removestock(name1, sku , temp);
-        addstock(name2, sku, temp);
-    end if;
-end; 
-
 create or replace procedure addStock(name varchar2, sku1 number, cantidad number) is 
 begin 
 
@@ -3222,6 +3209,29 @@ begin
     UPDATE STOCK s SET s.STOCK = s.stock - CANTIDAD WHERE ANAME = NAME AND SKU = SKU1; 
 end; 
 
+CREATE OR REPLACE PROCEDURE moveStocks(name1 varchar2, sku number, name2 varchar2 , cantidad number) is 
+temp number(5);
+begin
+    temp := cantStocks(name1, sku, cantidad);
+    DBMS_OUTPUT.PUT_LINE(temp);
+    if temp = -1 then 
+        DBMS_OUTPUT.PUT_LINE('No se encuentra dicho producto en almacen');
+    else 
+        removestock(name1, sku , temp);
+        addstock(name2, sku, temp);
+    end if;
+end; 
+
+CREATE OR REPLACE FUNCTION getStocks(name1 varchar2, sku1 number) return number is
+temp number(5);
+begin
+    select s.stock into temp from stock s where s.aname = name1 and s.sku = sku1;
+    return temp;
+
+    exception 
+    when no_data_found then
+        return 0; 
+end;
 
 
 -- EJECUTAR PARA PODER USAR LOS WHERE EN LOS SELECT

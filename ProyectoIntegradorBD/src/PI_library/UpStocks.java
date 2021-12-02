@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import static PI_library.Dashboard.content;
 import java.awt.HeadlessException;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -77,6 +78,8 @@ public class UpStocks extends javax.swing.JPanel {
         cant_stock = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        cant_stock1 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(750, 430));
@@ -164,6 +167,26 @@ public class UpStocks extends javax.swing.JPanel {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 10, 350));
+
+        cant_stock1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cant_stock1.setForeground(new java.awt.Color(102, 102, 102));
+        cant_stock1.setText("Cantidad de stock nuevo");
+        cant_stock1.setBorder(null);
+        cant_stock1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cant_stock1MousePressed(evt);
+            }
+        });
+        cant_stock1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cant_stock1ActionPerformed(evt);
+            }
+        });
+        add(cant_stock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 260, 30));
+
+        jSeparator5.setForeground(new java.awt.Color(0, 153, 255));
+        jSeparator5.setPreferredSize(new java.awt.Dimension(200, 10));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 260, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
@@ -199,13 +222,9 @@ public class UpStocks extends javax.swing.JPanel {
            try {
                //comprobamos de que ya no exista en el almacen dicho producto en stock
                String aname = box_almacen.getSelectedItem().toString();
-               String pname = box_producto.getSelectedItem().toString();
                String psku = getSku(box_producto.getSelectedIndex());
-               if(!verifyProd(aname , pname)){
-                   System.out.println("no se encontró");
-                   insertStock(aname, psku , String.valueOf(cantidad));
-               }
-               else updateStock(aname, psku, String.valueOf(cantidad));
+               //en insertStcok hay una plsql para poder insertar o actualizar dependiendo el caso 
+               insertStock(aname, psku , String.valueOf(cantidad));
            } catch (Exception ex) {
                Logger.getLogger(UpStocks.class.getName()).log(Level.SEVERE, null, ex);
            }
@@ -227,6 +246,14 @@ public class UpStocks extends javax.swing.JPanel {
             cant_stock.setText("Cantidad de stock nuevo");
         }
     }//GEN-LAST:event_formMouseClicked
+
+    private void cant_stock1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cant_stock1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cant_stock1MousePressed
+
+    private void cant_stock1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cant_stock1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cant_stock1ActionPerformed
 
     void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));
@@ -319,9 +346,11 @@ public class UpStocks extends javax.swing.JPanel {
     }
     public void insertStock(String aname, String sku , String cant){
         try{
-            Statement st = reg.createStatement();
-            String updSQL = "INSERT INTO STOCK VALUES ( '" + aname +"', " + sku + " , " + cant + " )";
-            st.executeQuery(updSQL);
+            CallableStatement cstm = reg.prepareCall("{call addStock(? , ? , ?)}");
+            cstm.setString(1,  aname );
+            cstm.setInt(2, Integer.parseInt(sku));
+            cstm.setInt(3, Integer.parseInt(cant));
+            cstm.executeUpdate();
             javax.swing.JOptionPane.showMessageDialog(this, "¡Stock insertado correctamente! \n", "HECHO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             
         }catch (SQLException ex) {
@@ -340,8 +369,10 @@ public class UpStocks extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> box_producto;
     private javax.swing.JPanel button;
     private javax.swing.JTextField cant_stock;
+    private javax.swing.JTextField cant_stock1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
 }
