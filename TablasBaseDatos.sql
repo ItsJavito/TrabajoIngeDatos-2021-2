@@ -2918,6 +2918,9 @@ CREATE TABLE STOCK
     ANAME VARCHAR2(50),
     SKU NUMBER(10),
     STOCK NUMBER(10),
+    
+    PRIMARY KEY (ANAME, SKU),
+    
     CONSTRAINTS ANAME_FK 
     FOREIGN KEY (ANAME) 
     REFERENCES ALMACEN
@@ -3173,6 +3176,52 @@ insert into stock values(
 'Almacen San Borja',
 1049036,
 173);
+
+--------------------- PL SQL --------------------------
+
+CREATE OR REPLACE FUNCTION cantStocks(name1 varchar2, sku1 number, cantidad number) return number is
+temp number(5);
+begin
+    select s.stock into temp from stock s where s.aname = name1 and s.sku = sku1;
+     DBMS_OUTPUT.PUT_LINE('temp: '|| temp || 'cant: ' || cantidad);
+    if(cantidad > temp) then 
+        return temp;
+    end if;
+    return cantidad; 
+    exception 
+    when no_data_found then
+        return -1; 
+end;
+
+CREATE OR REPLACE PROCEDURE moveStocks(name1 varchar2, sku number, name2 varchar2 , cantidad number) is 
+temp number(5);
+begin
+    temp := cantStocks(name1, sku, cantidad);
+    DBMS_OUTPUT.PUT_LINE(temp);
+    if temp = -1 then 
+        DBMS_OUTPUT.PUT_LINE('No se encuentra dicho producto en almacen');
+    else 
+        removestock(name1, sku , temp);
+        addstock(name2, sku, temp);
+    end if;
+end; 
+
+create or replace procedure addStock(name varchar2, sku1 number, cantidad number) is 
+begin 
+
+    INSERT INTO STOCK VALUES(name , sku1 , cantidad);
+    
+    EXCEPTION 
+    WHEN DUP_VAL_ON_INDEX THEN 
+    
+    UPDATE STOCK SET STOCK = STOCK + CANTIDAD WHERE ANAME = NAME AND SKU = SKU1;
+end; 
+
+create or replace procedure removeStock(name varchar2, sku1 number, cantidad number) is 
+begin 
+    UPDATE STOCK s SET s.STOCK = s.stock - CANTIDAD WHERE ANAME = NAME AND SKU = SKU1; 
+end; 
+
 
 
 -- EJECUTAR PARA PODER USAR LOS WHERE EN LOS SELECT
