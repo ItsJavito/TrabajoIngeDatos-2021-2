@@ -29,9 +29,9 @@ public class Pedidos extends javax.swing.JPanel {
     /**
      * Creates new form Principal
      */
-    public Pedidos() {
+    public Pedidos(Connect conn) throws SQLException {
         initComponents();
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         try {
             getPedidos();

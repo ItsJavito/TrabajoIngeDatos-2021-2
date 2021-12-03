@@ -29,10 +29,10 @@ public class MoveStocks extends javax.swing.JPanel {
     /**
      * Creates new form MoveStocks
      */
-    public MoveStocks() throws SQLException {
+    public MoveStocks(Connect conn) throws SQLException {
         initComponents();
-        conn = new Connect();
-        reg = conn.getConnection();
+        this.conn = conn;
+        reg = this.conn.getConnection();
         getAlmacen();
         getProduct();
     }

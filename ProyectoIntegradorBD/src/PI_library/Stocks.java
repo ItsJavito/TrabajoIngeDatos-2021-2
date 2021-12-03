@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 
 import static PI_library.Dashboard.content;
 import java.awt.BorderLayout;
-import oracle.net.aso.n;
 
 /**
  *
@@ -28,11 +27,12 @@ public class Stocks extends javax.swing.JPanel {
     Connection reg;
     /**
      * Creates new form Principal
+     * @param conn
      */
-    public Stocks() {
+    public Stocks(Connect conn) {
         initComponents();
-        conn = new Connect();
-        reg = conn.getConnection();
+        this.conn = conn;
+        reg = this.conn.getConnection();
         try {
             GetReports();
         } catch (SQLException ex) {
@@ -535,7 +535,7 @@ public class Stocks extends javax.swing.JPanel {
         });
         aniadirStock1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        add(aniadirStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 130, 40));
+        add(aniadirStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged
@@ -552,7 +552,7 @@ public class Stocks extends javax.swing.JPanel {
 
     private void aniadirStockMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStockMousePressed
 
-        UpStocks p1 = new UpStocks();
+        UpStocks p1 = new UpStocks(conn);
         p1.setSize(750, 430);
         p1.setLocation(0, 0);
 
@@ -565,7 +565,7 @@ public class Stocks extends javax.swing.JPanel {
     private void mov_almMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mov_almMousePressed
         MoveStocks p1 = null;
         try {
-            p1 = new MoveStocks();
+            p1 = new MoveStocks(conn);
         } catch (SQLException ex) {
             Logger.getLogger(Stocks.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -804,7 +804,14 @@ public class Stocks extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel2MousePressed
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-        // TODO add your handling code here:
+        UpStocks p1 = new UpStocks(conn);
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }//GEN-LAST:event_jLabel3MousePressed
 
     private void aniadirStock1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStock1MouseEntered
@@ -816,7 +823,14 @@ public class Stocks extends javax.swing.JPanel {
     }//GEN-LAST:event_aniadirStock1MouseExited
 
     private void aniadirStock1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aniadirStock1MousePressed
-        // TODO add your handling code here:
+        UpStocks p1 = new UpStocks(conn);
+        p1.setSize(750, 430);
+        p1.setLocation(0, 0);
+
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }//GEN-LAST:event_aniadirStock1MousePressed
 
     void setColor(JPanel panel){
@@ -851,7 +865,7 @@ public class Stocks extends javax.swing.JPanel {
                 list[i][3] = re.getString("STOCK");
                 i++;
             }
-            UpStocks p2 = new UpStocks(list[pos][2] ,list[pos][1] , list[pos][3] , list[pos][0]);
+            UpStocks p2 = new UpStocks(conn, list[pos][2] ,list[pos][1] , list[pos][3] , list[pos][0]);
             p2.setSize(750, 430);
             p2.setLocation(0, 0);
 

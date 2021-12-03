@@ -30,17 +30,17 @@ public class UpProd extends javax.swing.JPanel {
     Connection reg;
     boolean edition; 
     
-    public UpProd() throws SQLException {
-        conn = new Connect();
+    public UpProd(Connect conn) throws SQLException {
+        this.conn = conn;
         reg = conn.getConnection();
         edition = false; 
         initComponents();
         getBoxes();
     }
     
-    public UpProd(String sku , String nombre, String precio , String peso , String marca, String subCat)
+    public UpProd(Connect conn, String sku , String nombre, String precio , String peso , String marca, String subCat)
     {
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         initComponents();
         edition = true; 

@@ -32,9 +32,9 @@ public class Almac extends javax.swing.JPanel {
     Connect conn;
     Connection reg;
     
-    public Almac() throws SQLException {
+    public Almac(Connect conn) throws SQLException {
         initComponents();
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         getAlmc();
     }
@@ -248,7 +248,7 @@ public class Almac extends javax.swing.JPanel {
             TableModel model = jTable1.getModel();
             String name = String.valueOf(model.getValueAt(row, 0));
             String dir = String.valueOf(model.getValueAt(row, 1));
-            p1 = new UpAlmac(name , dir);
+            p1 = new UpAlmac(conn, name , dir);
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un almacén. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             return;
@@ -279,7 +279,7 @@ public class Almac extends javax.swing.JPanel {
             TableModel model = jTable1.getModel();
             String name = String.valueOf(model.getValueAt(row, 0));
             String dir = String.valueOf(model.getValueAt(row, 1));
-            p1 = new UpAlmac(name , dir);
+            p1 = new UpAlmac(conn, name , dir);
         }else{
             javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un almacén. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             return;
@@ -303,7 +303,7 @@ public class Almac extends javax.swing.JPanel {
     }//GEN-LAST:event_lbl_addMouseExited
 
     private void lbl_addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_addMousePressed
-        UpAlmac p1 = new UpAlmac();
+        UpAlmac p1 = new UpAlmac(conn);
         p1.setSize(750, 430);
         p1.setLocation(0, 0);
 
@@ -323,7 +323,7 @@ public class Almac extends javax.swing.JPanel {
 
     private void btn_addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addMousePressed
         
-        UpAlmac p1 = new UpAlmac();
+        UpAlmac p1 = new UpAlmac(conn);
         p1.setSize(750, 430);
         p1.setLocation(0, 0);
 

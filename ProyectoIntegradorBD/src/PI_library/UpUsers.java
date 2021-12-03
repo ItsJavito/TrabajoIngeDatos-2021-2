@@ -27,16 +27,16 @@ public class UpUsers extends javax.swing.JPanel {
     /**
      * Creates new form Principal
      */
-    public UpUsers() {
+    public UpUsers(Connect conn) {
         initComponents();
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         edit = false;
     }
     
-    public UpUsers(String ucod, String nombre, String correo) {
+    public UpUsers(Connect conn, String ucod, String nombre, String correo) {
         initComponents();
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         user_cod.setText(ucod);
         name.setText(nombre);
@@ -258,7 +258,7 @@ public class UpUsers extends javax.swing.JPanel {
                     Correo.setText("");
                     user_cod.setText("");
                     
-                    Users p1 = new Users();
+                    Users p1 = new Users(conn);
                     p1.setSize(750, 430);
                     p1.setLocation(0, 0);
 

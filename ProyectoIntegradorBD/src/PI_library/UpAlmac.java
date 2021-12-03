@@ -26,21 +26,21 @@ public class UpAlmac extends javax.swing.JPanel {
     /**
      * Creates new form UpAlmc
      */
-    public UpAlmac() {
+    public UpAlmac(Connect conn) {
         initComponents();
-        conn = new Connect();
+        this.conn = conn; 
         reg = conn.getConnection();
         edit = false; 
     }
     
-    public UpAlmac(String nombre , String direccion){
+    public UpAlmac(Connect conn, String nombre , String direccion){
         initComponents();
         name.setText(nombre);
         name.setEnabled(false);
         dir.setText(direccion);
         
-        conn = new Connect();
-        reg = conn.getConnection();
+        this.conn = conn;
+        reg = this.conn.getConnection();
         edit = true;
     }
     /**

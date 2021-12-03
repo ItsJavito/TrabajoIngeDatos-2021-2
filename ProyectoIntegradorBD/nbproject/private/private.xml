@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>src/PI_library/Stocks.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>565</line>
+                <key/>
+            </bookmark>
             <bookmark id="1">
                 <name/>
-                <line>875</line>
+                <line>880</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Prod.java</file>
+            <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/MoveStocks.java</file>
             <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpProd.java</file>
             <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Connect.java</file>
             <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Dashboard.java</file>
+            <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/UpStocks.java</file>
             <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Principal.java</file>
+            <file>file:/C:/UNIVERSIDAD/Ing.Datos/ProyectoIntegradorAPLICACION/ProyectoIntegradorBD/src/PI_library/Stocks.java</file>
         </group>
     </open-files>
 </project-private>

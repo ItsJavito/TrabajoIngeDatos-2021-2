@@ -33,9 +33,9 @@ public class Prod extends javax.swing.JPanel {
     Connection reg;
     
     
-    public Prod() {
+    public Prod(Connect conn) {
         initComponents();
-        conn = new Connect();
+        this.conn = conn;
         reg = conn.getConnection();
         try{
             getProducts();
@@ -231,7 +231,7 @@ public class Prod extends javax.swing.JPanel {
     private void btn_addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addMousePressed
         UpProd p1 = null;
         try {
-            p1 = new UpProd();
+            p1 = new UpProd(conn);
         } catch (SQLException ex) {
             Logger.getLogger(Prod.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -256,7 +256,7 @@ public class Prod extends javax.swing.JPanel {
     private void lbl_addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_addMousePressed
         UpProd p1 = null;
         try {
-            p1 = new UpProd();
+            p1 = new UpProd(conn);
         } catch (SQLException ex) {
             Logger.getLogger(Prod.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -315,7 +315,7 @@ public class Prod extends javax.swing.JPanel {
             String peso = String.valueOf(model.getValueAt(row, 3));
             String marca = String.valueOf(model.getValueAt(row, 4));
             String subc = String.valueOf(model.getValueAt(row, 5));
-            p1 = new UpProd(sku, name, precio , peso, marca, subc);
+            p1 = new UpProd(conn, sku, name, precio , peso, marca, subc);
         }else{
              javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
              return;
@@ -351,7 +351,7 @@ public class Prod extends javax.swing.JPanel {
             String peso = String.valueOf(model.getValueAt(row, 3));
             String marca = String.valueOf(model.getValueAt(row, 4));
             String subc = String.valueOf(model.getValueAt(row, 5));
-            p1 = new UpProd(sku, name, precio , peso, marca, subc);
+            p1 = new UpProd(conn, sku, name, precio , peso, marca, subc);
         }else{
              javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar un producto. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
              return;

@@ -23,7 +23,7 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public Dashboard() throws SQLException {
         initComponents();
         conn = new Connect();
         reg = conn.getConnection();
@@ -453,7 +453,7 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(btn_prod);
         resetColor(btn_alm);
         // Abrir sección
-        Users p1 = new Users();
+        Users p1 = new Users(conn);
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
@@ -471,7 +471,12 @@ public class Dashboard extends javax.swing.JFrame {
         setColor(btn_books);
         resetColor(btn_reports);
         // Abrir sección
-        Pedidos p1 = new Pedidos();
+        Pedidos p1 = null;
+        try {
+            p1 = new Pedidos(conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
@@ -489,7 +494,7 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(btn_alm);
         setColor(btn_reports);
         // Abrir sección
-        Stocks p1 = new Stocks();
+        Stocks p1 = new Stocks(conn);
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
@@ -602,7 +607,7 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(btn_reports);
         resetColor(btn_alm);
         // Abrir sección
-        Prod p1 = new Prod();
+        Prod p1 = new Prod(conn);
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
@@ -637,7 +642,7 @@ public class Dashboard extends javax.swing.JFrame {
         // Abrir sección
         Almac p1 = null;
         try {
-            p1 = new Almac();
+            p1 = new Almac(conn);
         } catch (SQLException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -688,7 +693,11 @@ public class Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                try {
+                    new Dashboard().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

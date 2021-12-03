@@ -32,10 +32,10 @@ public class UpStocks extends javax.swing.JPanel {
     /**
      * Creates new form Principal
      */
-    public UpStocks() {
+    public UpStocks(Connect conn) {
         initComponents();
-        conn = new Connect();
-        reg = conn.getConnection();
+        this.conn = conn;
+        reg = this.conn.getConnection();
         edition = false;
         try{
             getProdAlm();
@@ -44,10 +44,10 @@ public class UpStocks extends javax.swing.JPanel {
         }
     }
     
-    public UpStocks(String nAlmacen , String nProducto, String cantStock , String sku){
+    public UpStocks(Connect conn, String nAlmacen , String nProducto, String cantStock , String sku){
         initComponents();
-        conn = new Connect();
-        reg = conn.getConnection();
+        this.conn = conn;
+        reg = this.conn.getConnection();
         edition = true;
         this.sku = sku;
         cant_stock.setText(cantStock);
