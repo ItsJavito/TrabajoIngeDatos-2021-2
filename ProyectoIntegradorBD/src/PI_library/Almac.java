@@ -73,9 +73,10 @@ public class Almac extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setInheritsPopupMenu(true);
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 470, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 470, 90));
 
         btn_delete.setBackground(new java.awt.Color(18, 90, 173));
         btn_delete.setForeground(new java.awt.Color(18, 90, 173));

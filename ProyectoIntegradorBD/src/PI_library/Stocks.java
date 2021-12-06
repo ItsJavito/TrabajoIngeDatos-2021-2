@@ -147,7 +147,7 @@ public class Stocks extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 750, 260));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 710, 260));
 
         aniadirStock.setBackground(new java.awt.Color(18, 90, 173));
         aniadirStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

@@ -37,6 +37,9 @@ public class Principal extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(750, 430));
@@ -53,34 +56,46 @@ public class Principal extends javax.swing.JPanel {
 
         Text1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Text1.setText("Sistema de Gestión de pedidos y stock de los productos. ");
-        add(Text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        add(Text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Este programa permite administrar la base de datos de los productos, usuarios, stocks, etc. ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("• Administración de usuarios");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 200, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("• Control de stocks");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 170, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("• Control de pedidos ");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 320, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 320, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("• Añadir stock o buscar el stock de un producto ");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 330, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 330, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("• Eliminar, modificar, crear un usuario ");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 330, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 330, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PI_library/images/1519903673880.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 200, 210));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel4.setText("Profesora: Julia Agueda Valencia Grijalva");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 200, 30));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel13.setText("Ingeniería de datos - 601");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 130, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel10.setText("Grupo 5 WonkaDB");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -89,7 +104,10 @@ public class Principal extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JPanel body;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
